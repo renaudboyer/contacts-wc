@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="cnt-contact.js"></script>
+    <script src="cnt-contact-list.js"></script>
 </head>
 <body>
 <form>
@@ -13,17 +14,17 @@
     <input id="lastNameInput" type="text">
 </form>
 <button id="btn-add">Add</button>
-<ul>
+<cnt-contact-list>
     <cnt-contact>Roberto CARLOS</cnt-contact>
     <cnt-contact>Rudy VOLLER</cnt-contact>
     <cnt-contact>Jean-pierre PAPIN</cnt-contact>
-</ul>
+</cnt-contact-list>
 <script>
     const button = document.querySelector('#btn-add');
     button.addEventListener('click', addContact)
 
     function addContact() {
-        const contactList = document.querySelector('ul');
+        const contactList = document.querySelector('cnt-contact-list');
         const firstNameElement = document.getElementById('firstNameInput');
         const lastNameElement = document.getElementById('lastNameInput');
         const name = firstNameElement.value + ' ' + lastNameElement.value;
