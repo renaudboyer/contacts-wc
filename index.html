@@ -5,34 +5,9 @@
     <title>Title</title>
     <script src="cnt-contact.js"></script>
     <script src="cnt-contact-list.js"></script>
+    <script src="cnt-contact-app.js"></script>
 </head>
 <body>
-<form>
-    <label for="firstNameInput">Prenom</label>
-    <input id="firstNameInput" type="text">
-    <label for="lastNameInput">Nom</label>
-    <input id="lastNameInput" type="text">
-</form>
-<button id="btn-add">Add</button>
-<cnt-contact-list>
-    <cnt-contact>Roberto CARLOS</cnt-contact>
-    <cnt-contact>Rudy VOLLER</cnt-contact>
-    <cnt-contact>Jean-pierre PAPIN</cnt-contact>
-</cnt-contact-list>
-<script>
-    const button = document.querySelector('#btn-add');
-    button.addEventListener('click', addContact)
-
-    function addContact() {
-        const contactList = document.querySelector('cnt-contact-list');
-        const firstNameElement = document.getElementById('firstNameInput');
-        const lastNameElement = document.getElementById('lastNameInput');
-        const name = firstNameElement.value + ' ' + lastNameElement.value;
-
-        const contact = document.createElement('cnt-contact');
-        contact.appendChild(document.createTextNode(name));
-        contactList.appendChild(contact);
-    }
-</script>
+<cnt-contact-app></cnt-contact-app>
 </body>
 </html>
