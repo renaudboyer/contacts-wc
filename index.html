@@ -12,11 +12,26 @@
     <label for="lastNameInput">Nom</label>
     <input id="lastNameInput" type="text">
 </form>
-<button>Add</button>
+<button id="btn-add">Add</button>
 <ul>
     <cnt-contact>Roberto CARLOS</cnt-contact>
     <cnt-contact>Rudy VOLLER</cnt-contact>
     <cnt-contact>Jean-pierre PAPIN</cnt-contact>
 </ul>
+<script>
+    const button = document.querySelector('#btn-add');
+    button.addEventListener('click', addContact)
+
+    function addContact() {
+        const contactList = document.querySelector('ul');
+        const firstNameElement = document.getElementById('firstNameInput');
+        const lastNameElement = document.getElementById('lastNameInput');
+        const name = firstNameElement.value + ' ' + lastNameElement.value;
+
+        const contact = document.createElement('cnt-contact');
+        contact.appendChild(document.createTextNode(name));
+        contactList.appendChild(contact);
+    }
+</script>
 </body>
 </html>
